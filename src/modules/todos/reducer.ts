@@ -1,8 +1,9 @@
 import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from "./actions";
+import { TodoState, TodoAction } from "./types";
 
-const initialState = [];
+const initialState: TodoState = [];
 
-export default function todos(state = initialState, action) {
+function todos(state: TodoState = initialState, action: TodoAction): TodoState {
   switch (action.type) {
     case ADD_TODO:
       return state.concat({
@@ -12,7 +13,6 @@ export default function todos(state = initialState, action) {
       });
     case REMOVE_TODO:
       return state.filter(todo => {
-        console.log(todo);
         return todo.id !== action.payload;
       });
     case TOGGLE_TODO:
@@ -24,3 +24,5 @@ export default function todos(state = initialState, action) {
       return state;
   }
 }
+
+export default todos;

@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 
-function TodoInput({ onInsert }) {
+type TodoInputProps = {
+  onInsert: (text: string) => void;
+};
+
+function TodoInput({ onInsert }: TodoInputProps) {
   const [value, setValue] = useState("");
 
-  const handleChange = e => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!value) return;
