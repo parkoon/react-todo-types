@@ -1,8 +1,11 @@
 import React from "react";
 
 import { useSelector, useDispatch } from "react-redux";
+
 import Todos from "../components/Todos";
+
 import { addTodo, toggleTodo, removeTodo } from "../modules/todos";
+
 function TodoContainer() {
   const dispatch = useDispatch();
   const todos = useSelector(state => state.todos);
