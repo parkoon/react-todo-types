@@ -1,15 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./modules";
 import TodoContainer from "./container/TodoContainer";
+import GithubProfileLoader from "./container/GithuProfileLoader";
 
-const store = createStore(rootReducer);
+import thunk from "redux-thunk";
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
-    <TodoContainer />
+    <GithubProfileLoader />
   </Provider>,
   document.getElementById("root")
 );
