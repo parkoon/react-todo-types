@@ -7,6 +7,11 @@
 - Typescript
 - typesafe-actions lib (feature/typesafe-actions)
 
+## Branch
+- feature/saga: saga with typescript
+- feature/thunk: thunk with typescript
+- feature/saga-with-util: refactored by typesafe-actions lib
+
 ## Getting started
 
 ```
