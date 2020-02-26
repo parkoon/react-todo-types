@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import GithubInfo from "../components/GithubInfo";
 import GithubInput from "../components/GithubInput";
-import { fetchUserInfo } from "../api/github";
-import { GithubProfile, getUserInfo } from "../modules/github";
+import { getUserInfoAsync } from "../modules/github";
 import { RootState } from "../modules";
 
 function GithubContainer() {
@@ -14,7 +13,7 @@ function GithubContainer() {
 
   const dispatch = useDispatch();
   const onInsert = async (name: string) => {
-    dispatch(getUserInfo(name));
+    dispatch(getUserInfoAsync.request(name));
   };
 
   return (

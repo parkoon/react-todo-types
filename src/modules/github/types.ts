@@ -1,5 +1,6 @@
-import { getUserInfo, getUserInfoSuccess, getUserInfoFailure } from "./actions";
+import * as actions from "./actions";
 import { AxiosError } from "axios";
+import { ActionType } from "typesafe-actions";
 
 export type GithubProfile = {
   login: string;
@@ -43,7 +44,9 @@ export type GithubState = {
   };
 };
 
-export type GithubAction =
-  | ReturnType<typeof getUserInfo>
-  | ReturnType<typeof getUserInfoSuccess>
-  | ReturnType<typeof getUserInfoFailure>;
+export type GithubAction = ActionType<typeof actions>;
+
+// export type GithubAction =
+//   | ReturnType<typeof getUserInfo>
+//   | ReturnType<typeof getUserInfoSuccess>
+//   | ReturnType<typeof getUserInfoFailure>;
