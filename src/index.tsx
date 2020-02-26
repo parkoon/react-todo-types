@@ -1,15 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-import rootReducer from "./modules";
+import rootReducer, { rootSaga } from "./modules";
 import TodoContainer from "./container/TodoContainer";
+import GithubContainer from "./container/GithubContainer";
 
-const store = createStore(rootReducer);
+import createSagaMiddleware from "redux-saga";
+
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
-    <TodoContainer />
+    <GithubContainer />
   </Provider>,
   document.getElementById("root")
 );
