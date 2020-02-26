@@ -8,10 +8,14 @@
 - typesafe-actions lib (feature/typesafe-actions)
 
 ## Branch
-- feature/typesafe-action --> redux with typesafe-actions (todo list)
-- feature/saga: saga with typescript (github user profile api)
-- feature/thunk: thunk with typescript (github user profile api)
-- feature/saga-with-util: refactored by typesafe-actions lib (github user profile api)
+- feature/typesafe-action
+  - redux with typesafe-actions (todo list)
+- feature/saga
+  - saga with typescript (github user profile api)
+- feature/thunk
+  - thunk with typescript (github user profile api)
+- feature/saga-with-util
+  - refactored by typesafe-actions lib (github user profile api)
 
 ## Getting started
 
